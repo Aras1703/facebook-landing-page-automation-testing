@@ -25,15 +25,15 @@ class Facebook(webdriver.Chrome):
     def land_first_page(self):
         self.get(const.BASE_URL)
 
-    def put_email(self):
+    def put_email(self, email_phone):
         email_field = self.find_element(By.ID, "email")
         email_field.click()
-        email_field.send_keys(const.credential['phone'])
+        email_field.send_keys(email_phone)
 
-    def put_password(self):
+    def put_password(self, password):
         pass_field = self.find_element(By.ID, "pass")
         pass_field.click()
-        pass_field.send_keys(const.credential['password'])
+        pass_field.send_keys(password)
     
     def view_password(self):
         view_pass = self.find_element(By.CLASS_NAME, "_9lsa")
