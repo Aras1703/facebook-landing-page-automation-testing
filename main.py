@@ -1,10 +1,11 @@
 from facebook.facebook import Facebook
+from getpass4 import getpass
 
 try:
     with Facebook() as bot:
         bot.land_first_page()
-        bot.put_email()
-        bot.put_password()
+        bot.put_email(input("\nEmail or Phone number: "))
+        bot.put_password(getpass("Password: "))
         bot.view_password()
         bot.press_login()
         bot.forgot_password()
